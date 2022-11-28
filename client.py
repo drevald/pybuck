@@ -1,10 +1,10 @@
 import boto3
 
 client = boto3.client('s3',
-        aws_access_key_id='xxx',
-        aws_secret_access_key= 'xxx',
-        endpoint_url='http://192.168.0.198:4566', # my laptop address where docker engine is running
-        region_name='us-east-1')
+        aws_access_key_id='xxx',                    # same as in resource creation script create.sh  
+        aws_secret_access_key= 'xxx',               # same as in resource creation script create.sh  
+        endpoint_url='http://192.168.0.198:4566',   # my laptop address where docker engine is running
+        region_name='us-east-1')                    # same as in resource creation script create.sh  
 
 response = client.list_buckets()
 

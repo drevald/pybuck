@@ -12,10 +12,5 @@ services:
     - SERVICES=s3
     - DEBUG=1
     - DATA_DIR=/tmp/localstack/data
-    # Set timezone to local in container
-    - TZ=Europe/Moscow
-    # volumes:
-    # - './.localstack_:/var/lib/localstack'
-    # # - '/var/run/docker.sock:/var/run/docker.sock'
-    # # - '/etc/localtime:/etc/localtime:ro'
-    # - './create.sh:/docker-entrypoint-initaws.d/create.sh:ro' 
+    volumes:
+    - './create.sh:/docker-entrypoint-initaws.d/create.sh:ro' 
