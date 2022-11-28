@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack
+    ports:
+    - '4566:4566'
+    - '4510-4559:4510-4559'
+    - '8055:8080'
+    environment:
+    - SERVICES=s3
+    - DEBUG=1
+    - DATA_DIR=/tmp/localstack/data
+    # Set timezone to local in container
+    - TZ=Europe/Moscow
+    # volumes:
+    # - './.localstack_:/var/lib/localstack'
+    # # - '/var/run/docker.sock:/var/run/docker.sock'
+    # # - '/etc/localtime:/etc/localtime:ro'
+    # - './create.sh:/docker-entrypoint-initaws.d/create.sh:ro' 
